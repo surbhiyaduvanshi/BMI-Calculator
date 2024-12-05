@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url("https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22595_16539923345862310.jpg");
+        background-position: cover;
+    }
+    div{
+        width: 310px;
+        background-color:#ccdbf5;
+        height: 410px;
+        margin-left: 1000px;
+        margin-top: 50px;
+        padding-left: 60px;
+        box-shadow: 1px 4px 4px 3px rgb(43, 43, 43);
+    }
+    h1{
+        padding-top: 20px;
+        padding-left: 14px;
+        text-decoration: underline;
+        margin-bottom: 40px;
+    }
+    h3{
+        padding-left: 57px;
+        font-size: 22px;
+    }
+    input{
+        margin-left: 43px;
+    }
+    button{
+        
+        margin-top: 30px;
+        margin-left: 75px;
+        width: 110px;
+        height: 40px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+
+    }
+    button:hover{
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 18px;
+        padding-top: 10px;
+    }
+</style>
+<body id="body">
+    <div>
+        <h1>BMI Calculator</h1>
+        <h3>Height(in cm)</h3>
+        <input type="text" name="a1" id="n1" >
+        <h3>Weight(in kg)</h3>
+        <input type="text" name="a2" id="n2">
+        <br>
+        <button  onclick="bmi()">Calculate</button>
+        <h2 id="h2"> </h2>
+    </div>
+    <script>
+        function bmi(){
+            let b1=document.getElementById("n1").value;
+            b1=Number.parseInt(b1);
+            let b2=document.getElementById("n2").value;
+            b2=Number.parseInt(b2);
+            let s3=(b1/100)**2;
+            let s=(b2/s3).toFixed(2);
+            // let s1= "Your BMI is "+s;
+            // document.getElementById("h2").innerHTML=s1;
+            var category="";
+            if(18.5>=s){
+                category = "Underweight";
+            }
+            else if(25>=s){
+                category = "Normal weight";
+            }
+            else if(30>=s){
+                category = "Overweight";
+            }
+            else{
+                category = "Obese";
+            }
+            let result= document.getElementById("h2");
+            result.innerHTML="Your BMI is "+s + `( ${category} )`;
+
+        //    document.body.style.backgroundImage="url(https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22595_16539923345862310.jpg)";
+
+            
+        }
+    </script>
+</body>
+</html>
